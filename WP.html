@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<h2>Infographic presentation of wind power in Europe</h2>
+<style type="text/css">
+	
+	
+	h2 {
+		position: relative;
+		text-align: center;
+		font-size: 50px;
+		font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+		top: 35px;
+		margin-bottom: 100px;
+		
+	}
+	
+	h3 {
+		
+		position: relative;
+		text-align: center;
+		font-size: 30px;
+		font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+		top: 200px;
+	}
+	
+#slideshow {
+ display: table;
+  margin: 0 auto;
+	margin-bottom: 25px;
+		width: 43%;
+}
+ 
+#slideshow > div > img {
+  width: 100%;
+}
+#button {
+  text-align: center;
+	
+	
+}
+	
+	#counter {
+		
+display: table;
+  margin-left: 29%; 
+		margin-bottom: 150px;
+font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 19px;
+		font-weight: bold;
+	}
+	
+	#startCycle {
+		
+		font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
+		 background-color: black; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+		
+	}
+	
+	#prevBtn {
+		
+		font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
+		 background-color: black; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+	}
+	
+	#nextBtn {
+		
+		font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
+		 background-color: black; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+	}
+
+#slideshow > div > img { 
+    width: 100%; 
+}
+	
+	#InfoMW {
+		position: absolute;
+		left: 890px;
+		bottom: 60px;
+		 width: 500px;
+	}
+	
+	#InfoIMG {
+   display: table;
+  margin: 0 auto;
+		margin-bottom: 250px;
+		width: 45%;
+		
+	}
+	
+	#PieIMG {
+		
+		 display: table;
+  margin: 0 auto;
+		margin-top: 250px;
+		width: 35%;
+	}
+	
+	#Consume {
+		
+		    display: table;
+  margin: 0 auto;
+		margin-top: 250px;
+		width: 45%;
+	}
+	
+</style>
+</head>
+<body>
+<div id="slideshow">
+  <div>
+    <img name="slide" id="imgSlideshow" src="https://i.ibb.co/Wv1q2gX/988.png">
+  </div>
+</div>
+<div id="button">
+  <a href="#" id="prevBtn" onclick="return previousImage()">Prev</a>
+  <a href="#" id="startCycle" onclick="return setTimer()">Play / Pause</a>
+  <a href="#" id="nextBtn" onclick="return nextImage()">Next</a>
+</div>
+<div id="counter"></div>
+		
+<a href="https://ibb.co/GfwxMHz"><img id="InfoIMG" src="https://i.ibb.co/f0FzbfG/wind-2-o.png" alt="Color-codettt" border="0"></a>
+	
+	<h3>Renweable sources generating electicity in the EU</h3>
+
+<a href="https://ibb.co/X24KHG8"><img id="PieIMG" src="https://i.ibb.co/bRrx38L/CHARTPIE.png" alt="pie23" border="0"></a>
+	
+	<h3>Energy consumption per capita 2022</h3>
+
+<a href="https://ibb.co/P9Y521T"><img id="Consume" src="https://i.ibb.co/cCvNW2b/consume.png" alt="consume" border="0"></a>	
+	
+<script>
+	var imgNumber = 0;
+var path = ["https://i.ibb.co/Wv1q2gX/988.png",
+  "https://i.ibb.co/vH39B1f/999.png",
+  "https://i.ibb.co/f4y0CSN/2000000.png",
+  "https://i.ibb.co/xFmhW8G/2111.png",
+  "https://i.ibb.co/jZQQPZB/2222.png",
+  "https://i.ibb.co/x37VJPp/23333.png",
+  "https://i.ibb.co/25sx93P/244444.png",
+  "https://i.ibb.co/j5SDC47/2555555.png",
+  "https://i.ibb.co/64bdM9P/2666666.png",
+  "https://i.ibb.co/BsC2BwN/777777.png",
+  "https://i.ibb.co/ys9vFQN/8888.png",
+  "https://i.ibb.co/jHchqGx/9999.png",
+  "https://i.ibb.co/7W2zkf9/100000.png",
+  "https://i.ibb.co/2Zh9ZDW/111.png",
+  "https://i.ibb.co/PFB5RMm/1222.png",
+  "https://i.ibb.co/60V4cb0/1333.png",
+  "https://i.ibb.co/xfkxzwL/201444.png",
+  "https://i.ibb.co/Z1kwSCT/2155.png",
+  "https://i.ibb.co/ZYCJ32x/216666.png",
+  "https://i.ibb.co/6HSJGft/21777.png",
+ "https://i.ibb.co/QrCfQrX/188888.png",
+  "https://i.ibb.co/2vVvGTY/199999.png",
+  "https://i.ibb.co/X8Yn3CJ/2000.png",
+  "https://i.ibb.co/Y26WMyN/21111111.png"
+			
+];
+var numberOfImg = path.length;
+var timer = null;
+
+function slide() {
+  imgNumber = (imgNumber + 1) % path.length;
+  console.log(imgNumber);
+  document.getElementById("imgSlideshow").src = path[imgNumber];
+  changeCounter(imgNumber + 1, numberOfImg);
+}
+
+function setTimer() {
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
+  } else {
+    timer = setInterval(slide, 2500);
+  }
+  return false;
+}
+
+
+
+function previousImage() {
+  --imgNumber;
+  if (imgNumber < 0) {
+    imgNumber = numberOfImg - 1;
+  }
+  document.getElementById("imgSlideshow").src = path[imgNumber];
+  changeCounter(imgNumber + 1, numberOfImg);
+  return false;
+}
+
+function nextImage() {
+  ++imgNumber;
+  if (imgNumber > (numberOfImg - 1)) {
+    imgNumber = 0;
+  }
+  document.getElementById("imgSlideshow").src = path[imgNumber];
+  changeCounter(imgNumber + 1, numberOfImg);
+  return false;
+}
+
+function changeCounter(cur, total) {
+  document.getElementById("counter").innerHTML = cur + "/" + total;
+}
+document.getElementById("counter").innerHTML = 1 + "/" + path.length;
+	
+	</script>
+</body>
+</html>
